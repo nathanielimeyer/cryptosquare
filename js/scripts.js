@@ -1,7 +1,10 @@
 //Business Logic
 
 var secrefy = function(string) {
-  return string;
+  var array = userString.match(/[a-z]/g);
+  console.log(array);
+  var numbers = array.length;
+  console.log(numbers);
 };
 
 //User Interface
