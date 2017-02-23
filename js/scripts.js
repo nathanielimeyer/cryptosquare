@@ -8,7 +8,7 @@ var secrefy = function(string) {
 $(function() {
   $("form#userInput").submit(function(event){
     event.preventDefault();
-    userString = ($("input#originalMessage").val());
+    userString = ($("input#originalMessage").val().toLowerCase());
     // debugger;
     output = secrefy(userString);
     $(".answer").show();
