@@ -1,12 +1,22 @@
 //Business Logic
-var cryptoSquare = [[]];
-
 var secrefy = function(string) {
-  var array = userString.match(/[a-z]/g);
-  var numbers = array.length;
-  var squares = Math.sqrt(numbers);
-  rows = parseInt(squares) + 1;
-  columns = parseInt(squares) + 1;
+  var cryptoSquare = [[]];
+  var array = [];
+  var numbers = 0;
+  var squares = 0;
+  var rows = 0;
+  var columns = 0;
+  var newString = "";
+  array = userString.match(/[a-z]/g);
+  numbers = array.length;
+  squares = Math.sqrt(numbers);
+  if (parseInt(squares) === squares){
+    rows = squares;
+    columns = squares;
+  } else {
+    rows = parseInt(squares) + 1;
+    columns = parseInt(squares) + 1;
+  }
 
   arrayIndex = 0;
   for (r = 0; r < rows; r++){
@@ -14,11 +24,19 @@ var secrefy = function(string) {
     for (c = 0; c < columns; c++) {
       cryptoSquare[r][c] = array[arrayIndex];
       arrayIndex++;
-      
     }
   }
 
-
+  for (c = 0; c < columns; c++){
+    for (r = 0; r < rows; r++){
+      if (cryptoSquare[r][c] === undefined) {
+        newString = newString.concat("");
+      } else {
+        newString = newString.concat(cryptoSquare[r][c]);
+      }
+      console.log(newString);
+    }
+  }
 };
 
 //User Interface
