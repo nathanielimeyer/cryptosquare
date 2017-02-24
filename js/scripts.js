@@ -34,9 +34,17 @@ var secrefy = function(string) {
       } else {
         newString = newString.concat(cryptoSquare[r][c]);
       }
-      console.log(newString);
     }
   }
+
+  var yetAnotherArray = [];
+  var yetAnotherArrayIndex = 0;
+  for (i = 0; i < newString.length; i += 5) {
+    yetAnotherArray[yetAnotherArrayIndex] = newString.slice(i, i+5);
+    yetAnotherArrayIndex++;
+  }
+
+  return yetAnotherArray.join(" ");
 };
 
 //User Interface
